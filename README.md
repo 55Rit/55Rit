@@ -1,16 +1,32 @@
-### Hi there 👋
+<!-- Header -->
+# Welcome to Guess the Number Game! 🎮
 
-<!--
-**55Rit/55Rit** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Can you guess the number I'm thinking of? Give it a try!
 
-Here are some ideas to get you started:
+<!-- Game Section -->
+## Guess the Number:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+```html
+<script>
+  // Generate a random number between 1 and 100
+  const secretNumber = Math.floor(Math.random() * 100) + 1;
+
+  function guessNumber() {
+    // Get the user's guess
+    const userGuess = parseInt(prompt("Enter your guess (between 1 and 100):"));
+
+    // Check if the guess is correct, too high, or too low
+    if (userGuess === secretNumber) {
+      alert("Congratulations! You guessed the correct number!");
+    } else if (userGuess < secretNumber) {
+      alert("Too low! Try again.");
+      guessNumber(); // Recursive call to keep guessing
+    } else {
+      alert("Too high! Try again.");
+      guessNumber(); // Recursive call to keep guessing
+    }
+  }
+
+  // Start the game
+  guessNumber();
+</script>
